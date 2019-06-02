@@ -8,12 +8,15 @@
 
 <div class="panel panel-tabs management-panel">
     <div class="panel-heading management-head">
-        <ul class="nav nav-tabs nav-justified">
-        {% for view, text, icon in run_hook('flaskbb_tpl_admin_settings_menu', user=current_user, is_markup=False) %}
-            {{ navlink(view, _(text), icon, active) }}
-        {% endfor %}
-        </ul>
-    </div>
+        <!--<ul class="nav nav-tabs nav-justified" style="background: rgb(165,5,50)"
+            onMouseOver="this.style.backgroundColor='#520219'" onMouseOut="this.style.backgroundColor='#A50532'"
+            onfocus="this.style.backgroundColor = '#520219'">-->
+            <ul class="nav nav-tabs nav-justified" style="background: rgb(165,5,50)">
+                {% for view, text, icon in run_hook('flaskbb_tpl_admin_settings_menu', user=current_user, is_markup=False) %}
+                {{ navlink(view, _(text), icon, active) }}
+                {% endfor %}
+            </ul>
+</div>
     <div class="panel-body management-body">
         {% block management_content %}{% endblock %}
     </div>
